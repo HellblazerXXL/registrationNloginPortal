@@ -173,9 +173,7 @@
 
             let emailCheck = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
-            // if(form.input[password].value === ""){
-            //     alert("fill all fields")
-            // }
+      
 
             if(name.value === "" || name.value == null) {
                
@@ -189,12 +187,9 @@
 
 
             if(!email.value.match(emailCheck)) {
-                e.preventDefault();
+                
                 emailError.innerHTML = ("<span>Enter a valid email</span>")
 
-                // if(email.value.match(emailCheck)){
-                //     emailError.innerHTML = ("")
-                // } 
             }
             else(
                 emailError.innerHTML =("")
@@ -202,7 +197,7 @@
 
 
             if(phone.value === "" || phone.value == null) {
-                e.preventDefault();
+                
                 phoneError.innerHTML = ("<span>Enter a phone number</span>")
             
             }
@@ -212,7 +207,7 @@
 
 
             if(password.value === "") {
-                e.preventDefault();
+            
                 passwordError.innerHTML = ("<span>Enter a password</span>")
             
             }
@@ -232,7 +227,7 @@
 
 
             if(date.value === "" || date.value == null) {
-                e.preventDefault();
+                
                 dateError.innerHTML = ("<span>Choose a date</span>")
 
                 // if((todayDate - date) < 18){
@@ -254,12 +249,6 @@
 
     
                userData = userData.innerHTML=`<li>Fullname:${name.value}</li> <li>Email:${email.value}</li> <li>Phone:${phone.value}</li> <li>D.O.B:${date.value}</li>`
-
-        
-            
-
-
-
 
         
 
