@@ -88,42 +88,42 @@
 
         let passwordError = document.getElementById("passwordError");
 
-        password = "mp@gmail.com"
-        password = "mpxxl@007"
+        // password = "mp@gmail.com"
+        // password = "mpxxl@007"
 
 
         form.addEventListener("submit", (e) => {
             e.preventDefault()
 
-            // let email = document.getElementById("email").value = "mp@gmail.com";
+            let email = document.getElementById("email").value = "mp@gmail.com";
 
-            // let password = document.getElementById("password").value = "mpxxl@007";
+            let password = document.getElementById("password").value = "mpxxl@007";
 
            
 
 
-            // if(document.getElementById("email").value == email) {
+            if(document.getElementById("email").value == email) {
                
-            //     emailError.innerHTML = ("<span>Enter a valid email</span>")
+                emailError.innerHTML = ("<span>Enter a valid email</span>")
             
-            // }
+            }
 
 
 
 
-            // if(document.getElementById != password) {
+            if(document.getElementById != password) {
             
-            //     passwordError.innerHTML = ("<span>Enter a password</span>")
+                passwordError.innerHTML = ("<span>Enter a password</span>")
 
 
-            //     if(password.value.length <= 7){
-            //         passwordError.innerHTML = ("Password must be 8 characters above")
-            //     }
-            //     else (
-            //         passwordError.innerHTML = ""
-            //     )
+                if(password.value.length <= 7){
+                    passwordError.innerHTML = ("Password must be 8 characters above")
+                }
+                else (
+                    passwordError.innerHTML = ""
+                )
             
-            // }
+            }
 
             if(document.getElementById("email").value == email && document.getElementById("password").value == password) {
                 alert("Login succesful")
