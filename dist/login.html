@@ -95,14 +95,14 @@
         form.addEventListener("submit", (e) => {
             e.preventDefault()
 
-            let email = document.getElementById("email").value = "mp@gmail.com";
+            let email = "mp@gmail.com";
 
-            let password = document.getElementById("password").value = "mpxxl@007";
+            let password = "mpxxl@007";
 
            
 
 
-            if(document.getElementById("email").value == email) {
+            if(document.getElementById("email").value != email) {
                
                 emailError.innerHTML = ("<span>Enter a valid email</span>")
             
@@ -111,7 +111,7 @@
 
 
 
-            if(document.getElementById != password) {
+            if(document.getElementById("password").value != password) {
             
                 passwordError.innerHTML = ("<span>Enter a password</span>")
 
@@ -125,16 +125,10 @@
             
             }
 
-            if(document.getElementById("email").value == email && document.getElementById("password").value == password) {
-                alert("Login succesful")
-            }
-        
-                
 
             else (
-                alert("Enter correct details")
+                alert("Login successful!")
             )
-
 
             
         })
