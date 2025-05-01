@@ -1,0 +1,272 @@
+<!-- REGISTER:
+        =========
+        fullname, email, phone, password, date of birth.
+        1. Validate all the data.
+        2. User must submit a valid email address.
+        3. Password must be greater than 7 characters and it should consist of lowercase, uppercase, number, symbol (optional)
+        4. For date of birth, the user must be above 18 years.
+        5. Show the user information after successful validation
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registation Portal</title>
+    <link rel="stylesheet" href="/registrationAndLoginPortal/dist/style.css">
+</head>
+
+<body class="bg-purple-300">
+    <header>
+        <nav>
+            <div class="bg-purple-500 mt-5 mx-5 rounded-md px-2 py-4">
+                <div>
+                    <span class="text-3xl text-white font-bold">The Registerer</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mt-5">
+        <section>
+            <div>
+                <ul id="userData"></ul>
+            </div>
+
+            <div class="justify-items-center space-y-10">
+
+                <div class="mt-20 bg-purple-500 py-5 px-2 text-right mx-2 rounded-md">
+                    <form action="" class="space-y-4" id="form">
+                        <div>
+                            <label for="name">Fullname:</label>
+                            <input type="text" class="rounded-md px-1" placeholder="Enter name" id="name">
+                            <div id="nameError" class="text-red-600"></div>
+                        </div>
+
+                        <div>
+                            <label for="email">Email:</label>
+                            <input type="email" class="rounded-md px-1" placeholder="Enter mail" id="email">
+                            <div id="emailError" class="text-red-600"></div>
+                        </div>
+
+                        <div>
+                            <label for="phone">Phone:</label>
+                            <input type="number" class="rounded-md px-1" placeholder="Enter phone" id="phone">
+                            <div id="phoneError" class="text-red-600"></div>
+                        </div>
+
+                        <div>
+                            <label for="password">Password:</label>
+                            <input type="password" class="rounded-md px-1" placeholder="Enter password" id="password">
+                            <div id="passwordError" class="text-red-600"></div>
+                        </div>
+
+                        <div>
+                            <label for="date">Date of Birth :</label>
+                            <input type="date" class="rounded-md px-1" id="date">
+                            <div id="dateError" class="text-red-600"></div>
+                        </div>
+
+                        <div>
+                            <button></button>
+                            <button></button>
+                        </div>
+
+                        <input type="submit" value="Submit" class="bg-purple-700 py-2 px-4 rounded-md text-white hover:bg-purple-300">
+                        <input type="reset" value="clear" class="bg-purple-700 py-2 px-4 rounded-md text-white hover:bg-purple-300">
+                    </form>
+                </div>
+
+                <div class="space-x-4">
+                    <span>Already have an account?</span>
+                    <button class="bg-purple-700 py-2 px-4 rounded-md text-white hover:bg-purple-300"><a href="/registrationAndLoginPortal/dist/login.html">Login</a></button>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="bg-black mt-20 py-4 px-4">
+        <div class="space-y-20">
+            <div>
+                <span class="text-2xl text-white font-bold">The Registerer</span>
+            </div>
+
+            <div class="text-center text-white">
+                <span>&copy; 2025 Msughter Apera <a class="hover:text-yellow-400" href="https://github.com/HellblazerXXL">github.com/HellblazerXXL</a> @Blockfuse Labs</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- <script>
+        function checkInputFields (input) {
+            if(document.querySelector("input").value === "") {
+                alert ("All fields are required.");
+            }
+
+            if (document.getElementById("name").value === "") {
+                alert ("Name is missing: All input fields are required")
+            }
+
+            if (document.getElementById("email").value === "") {
+                alert ("Email is missing: All input fields are required")
+            }
+
+            if (document.getElementById("phone").value === "") {
+                alert ("Phone is missing: All input fields are required")
+            }
+
+            if (document.getElementById("password").value === "") {
+                alert ("Password is missing: All input fields are required")
+            }
+
+            if (document.getElementById("date").value === "") {
+                alert ("Date is missing: All input fields are required")
+            }
+
+      
+        }
+
+        
+    </script> -->
+
+    <!-- <script>
+        let forminput = document.getElementById("mail")
+        forminput.addEventListener('input', () => {
+            console.log(forminput.value)
+        })
+        let submitBtn = document.getElementById("subBtn")
+        function checkField() {
+            if (forminput.value === "") {
+                alert ("All fields are required.");
+            }
+        }
+        
+    </script> -->
+
+    <script>
+        const form = document.getElementById("form");
+        const name = document.getElementById("name");
+        const email = document.getElementById("email");
+        const phone = document.getElementById("phone");
+        const password = document.getElementById("password")
+        const date = document.getElementById("date");
+
+
+        let nameError = document.getElementById("nameError");
+        let emailError = document.getElementById("emailError");
+
+        let phoneError = document.getElementById("phoneError");
+
+        let passwordError = document.getElementById("passwordError");
+
+        let userData = document.getElementById("userData")
+
+        let todayDate = new Date().getFullYear();
+
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+
+            let emailCheck = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+            // if(form.input[password].value === ""){
+            //     alert("fill all fields")
+            // }
+
+            if(name.value === "" || name.value == null) {
+               
+                nameError.innerHTML = ("<span>Fullname is required</span>")
+            
+            }
+            else(
+                nameError.innerHTML = ("")
+            )
+           
+
+
+            if(!email.value.match(emailCheck)) {
+                e.preventDefault();
+                emailError.innerHTML = ("<span>Enter a valid email</span>")
+
+                // if(email.value.match(emailCheck)){
+                //     emailError.innerHTML = ("")
+                // } 
+            }
+            else(
+                emailError.innerHTML =("")
+            )
+
+
+            if(phone.value === "" || phone.value == null) {
+                e.preventDefault();
+                phoneError.innerHTML = ("<span>Enter a phone number</span>")
+            
+            }
+            else(
+                phoneError.innerHTML = ("")
+            )
+
+
+            if(password.value === "") {
+                e.preventDefault();
+                passwordError.innerHTML = ("<span>Enter a password</span>")
+            
+            }
+            else{
+                if(password.value.length <= 7){
+                    passwordError.innerHTML = ("Password must be 8 characters above")
+                }
+                else (
+                    passwordError.innerHTML = ("")
+                )
+                
+                
+            }
+
+
+
+
+
+            if(date.value === "" || date.value == null) {
+                e.preventDefault();
+                dateError.innerHTML = ("<span>Choose a date</span>")
+
+                // if((todayDate - date) < 18){
+                //     dateError.innerHTML = ("Not old enough")
+                // }
+
+                if (date < 18) {
+                    dateError.innerHTML = ("Not old enough")
+                }
+                // else(
+                //     dateError.innerHTML= ("")
+                // )
+            
+            }
+            else{
+                dateError.innerHTML = ("")
+            }
+
+    
+               userData = userData.innerHTML=`<li>Fullname:${name.value}</li> <li>Email:${email.value}</li> <li>Phone:${phone.value}</li> <li>D.O.B:${date.value}</li>`
+
+        
+            
+
+
+
+
+        
+
+            
+        })
+
+        document.getElementById("userData").appendChild(userData);
+    </script>
+</body>
+
+</html> 

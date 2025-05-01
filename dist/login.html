@@ -1,0 +1,145 @@
+<!-- 
+
+        LOGIN:
+        =======
+        Hard-code the email and password.
+
+        1. Validate all data
+        2. Check if the credentials are correct
+        3. If correct, show the user a successful message. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registation Portal</title>
+    <link rel="stylesheet" href="/registrationAndLoginPortal/dist/style.css">
+</head>
+
+<body class="bg-purple-50">
+    <header>
+        <nav>
+            <div class="bg-purple-500 mt-5 mx-5 rounded-md px-2 py-4">
+                <div>
+                    <span class="text-3xl text-white font-bold">The Registerer</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mt-5">
+        <section>
+            <div class="justify-items-center space-y-10">
+                <div class="mt-20 bg-purple-500 py-5 px-2 text-right mx-2 rounded-md">
+
+                    <form action="" class="space-y-7" id="form">
+                      
+                        <div>
+                            <label for="email">Email:</label>
+                            <input type="email" class="rounded-md px-1" placeholder="Enter mail" id="email">
+                            <div id="emailError" class="text-red-600"></div>
+                        </div>
+
+                        <div>
+                            <label for="password">Password:</label>
+                            <input type="password" class="rounded-md px-1" placeholder="Enter password" id="password">
+                            <div id="passwordError" class="text-red-600"></div>
+                        </div>
+<!-- 
+                        <div>
+                            <button></button>
+                            <button></button>
+                        </div> -->
+
+                        <input type="submit" value="submit" class="bg-purple-700 py-2 px-4 rounded-md text-white hover:bg-purple-300">
+                    </form>
+                </div>
+
+                <div class="space-x-4">
+                    <span>Don't have an account?</span>
+                    <button class="bg-purple-700 py-2 px-4 rounded-md text-white hover:bg-purple-300"><a href="/registrationAndLoginPortal/dist/index.html">Register</a></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black mt-28 py-4 px-4">
+        <div class="space-y-20">
+            <div>
+                <span class="text-2xl text-white font-bold">The Registerer</span>
+            </div>
+
+            <div class="text-center text-white">
+                <span>&copy; 2025 Msughter Apera <a class="hover:text-yellow-400" href="https://github.com/HellblazerXXL">github.com/HellblazerXXL</a> @Blockfuse Labs</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById("form");
+        const email = document.getElementById("email");
+        const password = document.getElementById("password")
+
+
+
+        let emailError = document.getElementById("emailError");
+
+        let passwordError = document.getElementById("passwordError");
+
+        password = "mp@gmail.com"
+        password = "mpxxl@007"
+
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+
+            // let email = document.getElementById("email").value = "mp@gmail.com";
+
+            // let password = document.getElementById("password").value = "mpxxl@007";
+
+           
+
+
+            // if(document.getElementById("email").value == email) {
+               
+            //     emailError.innerHTML = ("<span>Enter a valid email</span>")
+            
+            // }
+
+
+
+
+            // if(document.getElementById != password) {
+            
+            //     passwordError.innerHTML = ("<span>Enter a password</span>")
+
+
+            //     if(password.value.length <= 7){
+            //         passwordError.innerHTML = ("Password must be 8 characters above")
+            //     }
+            //     else (
+            //         passwordError.innerHTML = ""
+            //     )
+            
+            // }
+
+            if(document.getElementById("email").value == email && document.getElementById("password").value == password) {
+                alert("Login succesful")
+            }
+        
+                
+
+            else (
+                alert("Enter correct details")
+            )
+
+
+            
+        })
+
+    </script>
+</body>
+
+</html>
